@@ -1,0 +1,36 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: USER-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3307/user_db?useSSL=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+       ddl-auto: update
+       dialect: org.hibernate.dialect.MySQLDialect
+    properties:
+      hibernate:
+        show-sql: true
+        format-sql: false
+#  management:
+#    endpoints:
+#      web:
+#        exposure:
+#          include: '*'
+#    endpoint:
+#      health:
+#        show-details: always
+
+#EUREKA
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      register-with-eureka: true
+      fetch-registry: true
+
+
